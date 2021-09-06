@@ -1,4 +1,4 @@
-# caldom.org
+# CalDOM.org
 
 This is the source code of [CalDOM.org](https://caldom.org).
 

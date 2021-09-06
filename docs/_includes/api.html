@@ -1,0 +1,1064 @@
+
+            <nav class="navigation-container"><ul>
+        <h4>Initiate</h4><li><a href="#_">_()</a></li><h4>Traverse</h4><li><a href="#elems">elems</a></li><li><a href="#elem">elem</a></li><li><a href="#find">find()</a></li><li><a href="#eq">eq()</a></li><li><a href="#parent">parent()</a></li><li><a href="#children">children()</a></li><h4>Iterate</h4><li><a href="#each">each()</a></li><li><a href="#map">map()</a></li><h4>Manipulate/Retrieve Content</h4><li><a href="#html">html()</a></li><li><a href="#text">text()</a></li><li><a href="#val">val()</a></li><li><a href="#attr">attr()</a></li><li><a href="#prop">prop()</a></li><li><a href="#data">data()</a></li><h4>CSS Styling</h4><li><a href="#css">css()</a></li><li><a href="#addClass">addClass()</a></li><li><a href="#removeClass">removeClass()</a></li><li><a href="#show">show()</a></li><li><a href="#hide">hide()</a></li><h4>Event Handling</h4><li><a href="#on">on()</a></li><li><a href="#off">off()</a></li><h4>Manipulate DOM Tree</h4><li><a href="#append">append()</a></li><li><a href="#prepend">prepend()</a></li><li><a href="#remove">remove()</a></li><li><a href="#replace">replace()</a></li><li><a href="#react">react()</a></li><li><a href="#watched">watched</a></li><li><a href="#this.$">this.$</a></li><h4>Extensions</h4><li><a href="#_.q">_.q()</a></li><li><a href="#_.Component.prototype">_.Component.prototype</a></li><li><a href="#_.version">_.version</a></li><li><a href="#_cal_dom_alias">_cal_dom_alias</a></li>
+            </ul></nav>
+            <div class="navigation-back-overlay"></div>
+        <div><section id="_">
+                <h2>_( query_or_elems, children )
+</h2>
+        
+                <p>Initiates a CalDom instance.</p>
+
+                <h3>Parameters:</h3>
+                
+                    <div class="param-container">
+                        <h4>query_or_elems<span class="param-types"> : String | CalDom | Node | Array&lt;Node&gt; | NodeList | HTMLCollection</span></h4>
+                        <div><p>(Optional) &quot;+tag&quot; creates a new Element.</p><p>&#x27;&lt;tag&gt;&lt;/tag&gt;&#x27; creates specified HTML structure. &quot;~svg_tag&quot; creates a SVG element.</p><p>Otherwise, it can be a CSS Selector, an XPath query starting with &quot;$&quot;, a CalDom instance, a single Node/Element, an array of Nodes or a NodeList/HTMLCollection.</p></div>
+                    </div>
+            
+                    <div class="param-container">
+                        <h4>children<span class="param-types"> : CalDom | Node | String | Array&lt;CalDom | Node | String&gt;</span></h4>
+                        <div><p>(Optional) Child elements to be passed into append(). Can be CalDOM/Node/String or an array of them. See append() for all possibilities.</p><p>This might be useful for code-clarity at render() function for reactive components. See examples at react().</p></div>
+                    </div>
+            
+                    <div class="param-container">
+                        <h4>parentWindow=window<span class="param-types"> : Window</span></h4>
+                        <div><p>(Optional) parent_window default to current window. Use this to work with iframes or external windows.</p></div>
+                    </div>
+            
+
+                <h3>Returns:</h3>
+                <p>{CalDom} A new CalDom instance with created/found elements.</p>
+                    <h3>Examples:</h3>
+                    <textarea> //Create a new password input element with a placeholder
+ var passwordInput = _("+input")
+ 		.attr({
+ 			type: "password",
+ 			placeholder: "Enter your password"
+ 		});
+
+ //Create a password input element using full HTML syntax
+ var passwordInput = _( '<input type="password" placeholder="Type your password here" />' );
+
+ //Create a new SVG element
+ var svgRectangle = _("~rect")
+ 		.attr({
+ 			width: 100,
+ 			height: 100
+ 		});
+
+ //Get element by ID using CSS Selector
+ var container = _("#container-id");
+
+ //Find anchor elements inside <article> with href containing "wikipedia.org" using an XPath query
+ var wikipedia_links = _("$//article/a[contains(＠href, 'wikipedia.org')]");
+
+ //Create a CalDom instance with a single Node
+ var container = _( document.body.children[3] );
+
+ //Create a CalDom instance with a NodeList or array of Nodes
+ var bodyChildren = _(document.body.childNodes);
+
+ //Create a new DIV element and provide an array of children as the 2nd argument.
+ //CalDom accepts a wide variety of input types as children. See append() for all possibilities.
+ var something = _(
+ 		"+div",
+ 		[
+ 			document.createElement("h1"), //Node
+
+ 			_("+p").text("I'm a paragraph inside DIV."), //CalDom
+
+ 			'<img width="120" height="120" src="something.png" />', //HTML syntax
+
+ 			"Text Node inside DIV"
+ 		]
+ );
+</textarea>
+            </section>
+        <section id="elems">
+                <h2>elems: Array&lt;Node&gt;
+</h2>
+        
+                <p>Nodes/Elements of this CalDom instance.</p><p>(Note that directly changing items here is not recommended.)</p>
+                    <h3>Examples:</h3>
+                    <textarea>
+ //Get 3rd img element (zero-based index)
+ var third_img_elem = _("img").elems[2];
+</textarea>
+            </section>
+        <section id="elem">
+                <h2>elem: Node
+</h2>
+        
+                <p>First Node of this CalDom instance. .elem == .elems[0]</p>
+                    <h3>Examples:</h3>
+                    <textarea>
+ //Get first img element
+ var first_img_elem = _("img").elem;
+</textarea>
+            </section>
+        <section id="find">
+                <h2>find(selector_or_xpath)
+</h2>
+        
+                <p>Get a new CalDom instance with matching descendent elements for all elements in this CalDom instance.</p><p>Note: This could return duplicates when there are inter-connected elements in this CalDom instance.</p>
+
+                <h3>Parameters:</h3>
+                
+                    <div class="param-container">
+                        <h4>selector_or_xpath<span class="param-types"> : String</span></h4>
+                        <div><p>CSS Selector to find or XPath query starting with &quot;$&quot;</p></div>
+                    </div>
+            
+
+                <h3>Returns:</h3>
+                <p>{CalDom} A new CalDom instance with found elements.</p>
+                    <h3>Examples:</h3>
+                    <textarea> //Find child elements by the CSS selector
+ var slide_photos = calDomInstance.find(".slide-photo");
+
+ //Find child anchor elements with href containing "wikipedia.org" using an XPath query.
+ //(Note relative XPath queries starts with './' instead of root '/')
+ var wikipedia_links = calDomInstance.find("$./a[contains(＠href, 'wikipedia.org')]");
+
+ //Find following siblings of a <li> using an XPath query.
+ var li_next_siblings = _("#li-id").find("$./following-sibling::li");
+</textarea>
+            </section>
+        <section id="eq">
+                <h2>eq( index )</h2>
+        
+                <p>Get a new CalDom instance with i-th element in this CalDom instance.</p>
+
+                <h3>Parameters:</h3>
+                
+                    <div class="param-container">
+                        <h4>index<span class="param-types"> : Number</span></h4>
+                        <div><p>Can be a zero-based index or a minus(-i) index from end (Eg: -1 returns last element)</p></div>
+                    </div>
+            
+
+                <h3>Returns:</h3>
+                <p>{CalDom} A new CalDom instance with the i-th element</p>
+                    <h3>Examples:</h3>
+                    <textarea> //Get a new CalDom instance for 5th paragraph
+ var fifth_para = _("p").eq(4);
+
+ //Get a new Caldom instance for 2nd last paragraph
+ var second_last_para = _("p").eq(-2);
+</textarea>
+            </section>
+        <section id="parent">
+                <h2>parent( n_or_selector )</h2>
+        
+                <p>Get a new CalDom instance with immediate parent(s) or n-th parent(s) or parent(s) matching the CSS selector. (If this CalDom instance has more than 1 element, parents of all of them are included.)</p>
+
+                <h3>Parameters:</h3>
+                
+                    <div class="param-container">
+                        <h4>n_or_selector<span class="param-types"> : Number | String</span></h4>
+                        <div><p>(Optional) Default is immediate parent. If a number is given, n-th parent is returned (zero-based). If a string is given, first parent(s) to match the CSS selector is returned.</p></div>
+                    </div>
+            
+
+                <h3>Returns:</h3>
+                <p>{CalDom} A new CalDom instance with matched parents. Multiple parents will be returned if there are 2 or more elements in this CalDom instance.</p>
+                    <h3>Examples:</h3>
+                    <textarea> //Get a new CalDom instance for immediate parent
+ var para_parent = _("#para").parent();
+
+ //Get a new CalDom instance for 2nd-level parent(grand-parent)
+ var grand_parent = _("#para").parent(1);
+
+ //Get parents with the class "container" for all img elements
+ var img_parents = _("img").parent(".container");
+</textarea>
+            </section>
+        <section id="children">
+                <h2>children( match_selector )</h2>
+        
+                <p>Get a new CalDom instance with children of all elements in this CalDom instance. (If this CalDom instance has more than 1 element, children of all of them are included.)</p>
+
+                <h3>Parameters:</h3>
+                
+                    <div class="param-container">
+                        <h4>match_selector<span class="param-types"> : String</span></h4>
+                        <div><p>(Optional) CSS selector to match</p></div>
+                    </div>
+            
+
+                <h3>Returns:</h3>
+                <p>{CalDom} A new CalDom instance with children.</p>
+                    <h3>Examples:</h3>
+                    <textarea>
+ //Get all children of element with id "container-id"
+ var container_children = _("#container-id").children();
+
+ //Get checked elements
+ var checked_elements = _("#form-id").children(":checked");
+</textarea>
+            </section>
+        <section id="each">
+                <h2>each(callback)
+</h2>
+        
+                <p>Iterate each element in this CalDom instance with a callback.</p>
+
+                <h3>Parameters:</h3>
+                
+                    <div class="param-container">
+                        <h4>callback<span class="param-types"> : Function</span></h4>
+                        <div><p>Function to callback. Callback is called with 2 arguments: callback(elem: Node, index: Number). The enumeration stops if the callback returns false.</p></div>
+                    </div>
+            
+
+                <h3>Returns:</h3>
+                <p>{CalDom} Returns current CalDom instance</p>
+                    <h3>Examples:</h3>
+                    <textarea> //Iterate through all img elements with the class "slide" and log its index and src
+ _("img.slide").each( function(elem, i){
+ 		console.log( i, elem.src );
+ });
+</textarea>
+            </section>
+        <section id="map">
+                <h2>map(callback)
+</h2>
+        
+                <p>Iterate each element in this CalDom instance with a callback and get an array of callback&#x27;s returned values.</p>
+
+                <h3>Parameters:</h3>
+                
+                    <div class="param-container">
+                        <h4>callback<span class="param-types"> : Function</span></h4>
+                        <div><p>Function to callback. Callback is called with 2 arguments: callback(elem: Node, index: Number).</p></div>
+                    </div>
+            
+
+                <h3>Returns:</h3>
+                <p>{Array} An array of values returned by the callback.</p>
+                    <h3>Examples:</h3>
+                    <textarea> //Get value length of text input elements
+ var lengths = _("input[type=text]")
+ 		.map( function(elem, i) {
+ 			return elem.value.length;
+ 		})
+</textarea>
+            </section>
+        <section id="html">
+                <h2>html( html_or_html_array )</h2>
+        
+                <p>Get or set innerHTML of all elements in this CalDom instance.</p><p>(WARNING: This might lead to XSS vulnerabilities. Use text() or append(&quot;text_content&quot;) if you&#x27;re only updating text).</p>
+
+                <h3>Parameters:</h3>
+                
+                    <div class="param-container">
+                        <h4>html_or_html_array<span class="param-types"> : String | Array&lt;String&gt;</span></h4>
+                        <div><p>(Optional) A HTML string or an array of HTML strings to set at corresponding n-th element.</p><p>If not given, an array of innerHTML for all elements in this CalDom instance is returned.</p></div>
+                    </div>
+            
+
+                <h3>Returns:</h3>
+                <p>{ CalDom | Array&lt;String&gt; } If html_or_html_array param is given, current CalDom instance is returned.</p><p>Otherwise, an array of innerHTML from all elements in this CalDom instance is returned.</p>
+                    <h3>Examples:</h3>
+                    <textarea> //Set HTML code to a DIV element
+ _("#div-id").html( '<p>Bla Bla</p>' );
+
+ //Set an array of HTML code to corresponding n-th element
+ _(".container").html( ['<p id="para-1"></p>', '<p id="para-2"></p>'] );
+
+ //Get HTML code of all div elements as an array
+ var h3_html_array = _("div").html();
+</textarea>
+            </section>
+        <section id="text">
+                <h2>text( text_or_text_array )</h2>
+        
+                <p>Get or set textContent of all elements in this CalDom instance.</p>
+
+                <h3>Parameters:</h3>
+                
+                    <div class="param-container">
+                        <h4>text_or_text_array<span class="param-types"> : String | Array&lt;String&gt;</span></h4>
+                        <div><p>(Optional) Text or an array of text to set at corresponding n-th element.</p><p>If not given, an array of textContent is returned.</p></div>
+                    </div>
+            
+
+                <h3>Returns:</h3>
+                <p>{ CalDom | Array&lt;String&gt; } If text_or_text_array is given, current CalDom instance is returned.</p><p>Otherwise, an array of textContent from all elements in this CalDom instance is returned.</p>
+                    <h3>Examples:</h3>
+                    <textarea> //Set text of all anchor elements to "Click Here"
+ _("a").text("Click Here");
+
+ //Set an array of text to n-th paragraph
+ _("p").text( ["Para One", "Para Two"] )
+
+ //Get an array of text from span elements with the class "caption"
+ var captions_array = _("span.caption").text();
+</textarea>
+            </section>
+        <section id="val">
+                <h2>val( val_or_val_array )</h2>
+        
+                <p>Get or set value property of elements in this CalDom instance.</p>
+
+                <h3>Parameters:</h3>
+                
+                    <div class="param-container">
+                        <h4>val_or_val_array<span class="param-types"> : String | Number | Array&lt;String | Number&gt;</span></h4>
+                        <div><p>(Optional) Value or array of values to to be set at corresponding n-th element.</p><p>If not given, array of values will be returned.</p></div>
+                    </div>
+            
+
+                <h3>Returns:</h3>
+                <p>{ CalDom | Array&lt;String&gt; } If val_or_val_array is given, current CalDom instance is returned.</p><p>Otherwise, array of value from all elements in this CalDom instance is returned.</p>
+                    <h3>Examples:</h3>
+                    <textarea>
+ //Get an value array from all text input elements
+ var input_text_array = _('input[type="text"]').val();
+
+ //Make all password fields empty
+ _('input[type="password"]').val("");
+
+ //Set an array of values to n-th input element
+ _('input[type="text"]').val( ["One", "Two", "Three"] );
+</textarea>
+            </section>
+        <section id="attr">
+                <h2>attr(...)
+</h2>
+        
+                <p>Get or set attribute(s) of elements in this CalDom instance.</p>
+
+                <h3>Parameters:</h3>
+                
+                    <div class="param-container">
+                        <h4>key_or_key_values<span class="param-types"> : String | Object</span></h4>
+                        <div><p>Attribute name as a String or { key: value, ... } object to set multiple attributes</p></div>
+                    </div>
+            
+                    <div class="param-container">
+                        <h4>val_or_val_array<span class="param-types"> : any | Array&lt;String | Number&gt;</span></h4>
+                        <div><p>(Optional) Value or array of values to be assigned at corresponding n-th element.</p><p>If not given, an array of attribute values for the given key is returned.</p></div>
+                    </div>
+            
+
+                <h3>Returns:</h3>
+                <p>{ CalDom | Array&lt;String | Number&gt; } If it&#x27;s a set request, current CalDom instance is returned.</p><p>Otherwise, an attribute value array from all elements in this CalDom instance is returned.</p>
+                    <h3>Examples:</h3>
+                    <textarea> //Set scrolling attribute of all iframes
+ _("iframe").attr("scrolling", "no");
+
+ //Get an array of href attribute from all <a> tags
+ var links_array = _("a").attr("href");
+
+ //Set width and height of img elements
+ _("img").attr({
+ 	width: 400,
+ 	height: 300
+ });
+
+ //Set an array of type attribute to n-th input elements
+ _("input").attr( "type", ["text", "password", "date"] );
+</textarea>
+            </section>
+        <section id="prop">
+                <h2>prop(...)
+</h2>
+        
+                <p>Get or set variable(s) at elements&#x27; root. Other than assigning custom data of any type at elements&#x27; root, this can be used to access all properties/attributes of elements as well.</p><p>Warning: Look out for untracked circular references that might lead to memory leaks.</p>
+
+                <h3>Parameters:</h3>
+                
+                    <div class="param-container">
+                        <h4>key_or_key_values<span class="param-types"> : String | Object</span></h4>
+                        <div><p>Variable name as a String or { key: value, ... } object to set multiple variables.</p></div>
+                    </div>
+            
+                    <div class="param-container">
+                        <h4>val_or_val_array<span class="param-types"> : any | Array</span></h4>
+                        <div><p>(Optional) Value or an array of values to be to be assigned at the corresponding n-th element. If empty, an array of given key&#x27;s values is returned.</p></div>
+                    </div>
+            
+
+                <h3>Returns:</h3>
+                <p>{CalDom | Array} If it&#x27;s a set request, this chainable CalDom instance is returned.</p><p>Otherwise, a value array from all elements in this CalDom instance is returned.</p>
+                    <h3>Examples:</h3>
+                    <textarea> //Get custom data
+ var custom_data_array = _(".class-name").prop("customData");
+
+ //Set click event handler
+ _("#elem-id").prop("onclick", (e) => { console.log("clicked") });
+
+ //Set an array of custom_data to n-th <p> separately
+ _("p").prop( "custom_data", [custom_data_one, custom_data_two, null] );
+
+ //Set multiple variables
+ _("input").prop({
+ 		type: "text",
+ 		value: "Hello World!",
+ 		custom_data: 44,
+ 		other_data: { name: "Jane" }
+ });
+</textarea>
+            </section>
+        <section id="data">
+                <h2>data( key, value )</h2>
+        
+                <p>Store &amp; retrieve { key: value, ... } data from elements in this CalDom instance.</p><p>(Data is stored at element._data. However, _data location might change over time, avoid accessing it directly as possible.)</p><p>Warning: Look out for untracked circular references that might lead to memory leaks.</p>
+
+                <h3>Parameters:</h3>
+                
+                    <div class="param-container">
+                        <h4>key<span class="param-types"> : Object</span></h4>
+                        <div><p>Can be any javascript Object, usually a string.</p></div>
+                    </div>
+            
+                    <div class="param-container">
+                        <h4>value<span class="param-types"> : any | Array</span></h4>
+                        <div><p>(Optional) Can be any javascript Object or an array of Objects to be to be assigned at the corresponding n-th element.</p></div>
+                    </div>
+            
+
+                <h3>Returns:</h3>
+                <p>If it&#x27;s a set request, this CalDom instance is returned.</p><p>Otherwise, an array of values for the provided key from all elements is returned.</p>
+            </section>
+        <section id="css">
+                <h2>css(....)
+</h2>
+        
+                <p>Get &amp; set CSS style rule(s) of elements in this CalDom instance.</p>
+
+                <h3>Parameters:</h3>
+                
+                    <div class="param-container">
+                        <h4>key_or_key_values<span class="param-types"> : String | Object</span></h4>
+                        <div><p>CSS property name or { property: value, ... } object to set multiple rules</p></div>
+                    </div>
+            
+                    <div class="param-container">
+                        <h4>val_or_val_array<span class="param-types"> : String | Number | Array&lt;String | Number&gt;</span></h4>
+                        <div><p>CSS value or an array of values to be set at n-th element for the given CSS property name.</p></div>
+                    </div>
+            
+
+                <h3>Returns:</h3>
+                <p>{CalDom | Array&lt;String | Number&gt;} If it&#x27;s a set request, this CalDom instance is returned.</p><p>Otherwise, a CSS value array for the given property from all elements in this CalDom instance is returned.</p>
+                    <h3>Examples:</h3>
+                    <textarea>
+ //Set one rule
+ _(".class-name").css("background-color", "blue");
+
+ //Set multiple rules
+ _("#div-id").css({
+ 		backgroundColor: "red",
+ 		"font-size": "2em"
+ });
+
+ //Set CSS value using an array for n-th element
+ _(".box")
+ 	.css( "background-color", [ "red", "yello", "#555"] );
+
+ //Get CSS value
+ var rule_value = _("#something").css("display")[0];
+</textarea>
+            </section>
+        <section id="addClass">
+                <h2>addClass(class_names)
+</h2>
+        
+                <p>Add class name(s) to elements in this CalDom instance.</p>
+
+                <h3>Parameters:</h3>
+                
+                    <div class="param-container">
+                        <h4>class_names<span class="param-types"> : String | Array</span></h4>
+                        <div><p>A single class name or multiple class names separated by spaces or as an array.</p></div>
+                    </div>
+            
+
+                <h3>Returns:</h3>
+                <p>{CalDom} Returns this CalDom instance.</p>
+                    <h3>Examples:</h3>
+                    <textarea>
+ //Add a single class
+ _("#container").addClass("wide-view");
+
+ //Add multiple classes (space-separated)
+ _("#container").addClass("visible dark-theme narrow");
+ 
+ //Add multiple classes (array)
+ _("#container").addClass( ["visible", "dark-theme", "narrow"] );
+</textarea>
+            </section>
+        <section id="removeClass">
+                <h2>removeClass(class_names)
+</h2>
+        
+                <p>Remove class name(s) from elements in this CalDom instance.</p>
+
+                <h3>Parameters:</h3>
+                
+                    <div class="param-container">
+                        <h4>class_names<span class="param-types"> : String | Array</span></h4>
+                        <div><p>A single class name or multiple class names separated by spaces or as an array.</p></div>
+                    </div>
+            
+
+                <h3>Returns:</h3>
+                <p>{CalDom} Returns this CalDom instance.</p>
+                    <h3>Examples:</h3>
+                    <textarea>
+ //Remove a single class
+ _("#container").removeClass("visible");
+
+ //Remove multiple classes (space-separated)
+ _("#container").removeClass("dark-theme narrow");
+ 
+ //Remove multiple classes (array)
+ _("#container").removeClass( ["dark-theme", "narrow"] );
+</textarea>
+            </section>
+        <section id="show">
+                <h2>show([display_value])
+</h2>
+        
+                <p>Set display CSS property of all elements in this CalDom instance.</p>
+
+                <h3>Parameters:</h3>
+                
+                    <div class="param-container">
+                        <h4>display_value<span class="param-types"> : String</span></h4>
+                        <div><p>(optional) Display value. Default to &quot;block&quot;</p></div>
+                    </div>
+            
+
+                <h3>Returns:</h3>
+                <p>{CalDom} Returns this CalDom instance.</p>
+                    <h3>Examples:</h3>
+                    <textarea>
+ //Set CSS display property of #container to "block"
+ _("#container").show();
+
+ //Set CSS display property of #gallery to "flex"
+ _("#gallery").show("flex");
+</textarea>
+            </section>
+        <section id="hide">
+                <h2>hide()
+</h2>
+        
+                <p>Set display CSS property of all elements in this CalDom instance to &quot;None&quot;.</p>
+
+                <h3>Returns:</h3>
+                <p>{CalDom} Returns this CalDom instance.</p>
+                    <h3>Examples:</h3>
+                    <textarea>
+ //Set CSS display property of #container to "none"
+ _("#container").hide();
+</textarea>
+            </section>
+        <section id="on">
+                <h2>on( event_names, handler, options )</h2>
+        
+                <p>Add event listeners to elements in this CalDom instance.</p>
+
+                <h3>Parameters:</h3>
+                
+                    <div class="param-container">
+                        <h4>event_names<span class="param-types"> : String | Array</span></h4>
+                        <div><p>A single event name or multiple event names separated by spaces or as an array.</p></div>
+                    </div>
+            
+                    <div class="param-container">
+                        <h4>handler<span class="param-types"> : Function</span></h4>
+                        <div><p>Callback function to handle the event.</p></div>
+                    </div>
+            
+                    <div class="param-container">
+                        <h4>options<span class="param-types"> : any</span></h4>
+                        <div><p>(Optional) options to pass into addEventListener&#x27;s 3rd param.</p></div>
+                    </div>
+            
+
+                <h3>Returns:</h3>
+                <p>{CalDom} Returns this CalDom instance.</p>
+                    <h3>Examples:</h3>
+                    <textarea> //Add a click event listener
+ _("div-id").on( "click", function(e){ console.log("clicked") } );
+
+ //Add mousemove and touchmove event listeners
+ _("div-id").on("mousemove touchmove", moveHandler);
+ 
+ //Event names as an array
+ _("div-id").on(["mousemove", "touchmove"], moveHandler);
+
+</textarea>
+            </section>
+        <section id="off">
+                <h2>off( event_names, handler, options )</h2>
+        
+                <p>Remove event listeners from elements in this CalDom instance.</p>
+
+                <h3>Parameters:</h3>
+                
+                    <div class="param-container">
+                        <h4>event_names<span class="param-types"> : String | Array</span></h4>
+                        <div><p>A single event name or multiple event names separated by spaces or as an array.</p></div>
+                    </div>
+            
+                    <div class="param-container">
+                        <h4>handler<span class="param-types"> : Function</span></h4>
+                        <div><p>Callback. The same callback provided at on() or Node.addEventListener() should be provided.</p></div>
+                    </div>
+            
+                    <div class="param-container">
+                        <h4>options<span class="param-types"> : any</span></h4>
+                        <div><p>(Optional) options to pass into removeEventListener&#x27;s 3rd param.</p></div>
+                    </div>
+            
+
+                <h3>Returns:</h3>
+                <p>{CalDom} Returns this CalDom instance.</p>
+                    <h3>Examples:</h3>
+                    <textarea> //Remove click event listener
+ _("div-id").off("click", clickEventHandler);
+
+ //Remove mousemove and touchmove event listeners
+ _("div-id").off("mousemove touchmove", moveHandler);
+ 
+ //Event names as an array
+ _("div-id").off(["mousemove",  "touchmove"], moveHandler);
+</textarea>
+            </section>
+        <section id="append">
+                <h2>append( elems_caldom_generator, ...elems )
+</h2>
+        
+                <p>Append/Move elements to first element of this CalDom instance.</p><p>Null and undefined inputs are silently ignored. Note that if you append an existing element, it is moved to the new destination (not cloning).</p>
+
+                <h3>Parameters:</h3>
+                
+                    <div class="param-container">
+                        <h4>elems_or_caldom<span class="param-types"> : Node | String | CalDom | Array | NodeList | HTMLCollection</span></h4>
+                        <div><p>First argument can be a CalDom instance, a Node/String or an array of Node/String.</p><p>Provided elements are added to the first element of this CalDom instance. This is XSS safe as it&#x27;s considering String inputs as a text node. Use .html() or init _(&quot;&lt;h1&gt;&lt;/h1&gt;&quot;) to inject HTML.</p><p>See the examples for wide range of possibilities.</p></div>
+                    </div>
+            
+                    <div class="param-container">
+                        <h4>...elems<span class="param-types"> : Node | String | CalDom </span></h4>
+                        <div><p>(Optional) If the first argument is not an array-type, all ...arguments are added to the first element of this CalDom instance.</p></div>
+                    </div>
+            
+
+                <h3>Returns:</h3>
+                <p>{CalDom} Returns this CalDom instance.</p>
+                    <h3>Examples:</h3>
+                    <textarea>
+ //Append a new <div> to body (Element created by CalDom)
+ _("body").append( _("+div") );
+
+ //Append a new <div> to body (Element created by document.createElement)
+ _("body").append( document.createElement("div") );
+
+ //Append multiple elements, including nested elements and Node arrays
+ _("#container-id").append(
+ 		_("+div")
+ 			.append( //Nested
+ 				_("+p").text("Paragraph inside the div.")
+ 			),
+
+ 		_("p").text("Another paragraph as a first-level child."),
+
+ 		document.createElement("img"),
+
+ 		null, undefined, //Silently ignored
+
+ 		"Text Node"
+
+ );
+
+ //Append an array of Nodes and CalDom instances to <body>
+ _("body").append(
+ 	[
+ 		_("+h1"),
+
+ 		_("+div").append(
+ 			_("+p").text("Paragraph inside the div.")
+ 		),
+
+ 		document.createElement("p"),
+
+ 		"Text Node"
+ 	]
+ );
+
+ //Move existing <p> elements from "container-a" to "container-b"
+ _("#container-b").append( _("#container-a p") );
+ 
+ //Short form of append:
+ 
+ //Appending empty Paragrapgh to the body
+ _( "body", _("+p") );
+ 
+ //Appending multiple elements to the body
+ _( "body", [
+ 	_("+p", "Para Text"), 
+ 	document.createElement("div"),
+ 	"Text Node"
+ ]);
+</textarea>
+            </section>
+        <section id="prepend">
+                <h2>prepend( elems_or_caldom, before_elem_or_caldom )</h2>
+        
+                <p>Prepend/Move elements to the first element of this CalDom instance.</p><p>(Same as append(), except 2nd argument is reserved to identify before element.)</p><p>Null and undefined inputs are silently ignored. Note that if you prepend an existing element, it is moved to the new destination (not cloning).</p>
+
+                <h3>Parameters:</h3>
+                
+                    <div class="param-container">
+                        <h4>elems_or_caldom<span class="param-types"> : Node | CalDom | Array | NodeList | HTMLCollection</span></h4>
+                        <div><p>First argument can be a CalDom instance, a Node/String or an array of Node/String.</p><p>Items are prepended to the first element of this CalDom instance. This is XSS safe as it&#x27;s considering String inputs as a text node. Use .html() or init _(&quot;&lt;h1&gt;&lt;/h1&gt;&quot;) to inject HTML.</p></div>
+                    </div>
+            
+                    <div class="param-container">
+                        <h4>before_elem_or_caldom<span class="param-types"> : Node | String | CalDom</span></h4>
+                        <div><p>(Optional) If provided, items are inserted before this element instead before the firstChild.</p></div>
+                    </div>
+            
+
+                <h3>Returns:</h3>
+                <p>{CalDom} Returns this CalDom instance.</p>
+                    <h3>Examples:</h3>
+                    <textarea>
+ //Prepend a new <p> element as the first child
+ _("#container-id")
+ 		.prepend(
+ 			_("+p").text("I'm the first child now.")
+ 		);
+
+ //Prepend a new <p> element before the 3rd paragraph in the container
+ _("#container-id")
+ 		.prepend(
+ 			_("+p").text("I'm the 3rd paragraph now."),
+ 			_("#container-id p").eq(2) //Before element
+ 		);
+
+ //First argument of prepend() is the same as append().
+ //Refer its examples for a wide variety of possibilities.
+</textarea>
+            </section>
+        <section id="remove">
+                <h2>remove(  )</h2>
+        
+                <p>Remove all elements of this CalDom instance from the DOM.</p>
+
+                <h3>Returns:</h3>
+                <p>{CalDom} Returns this empty CalDom instance.</p>
+                    <h3>Examples:</h3>
+                    <textarea>
+ //Remove all <p> elements
+ _("p").remove();
+</textarea>
+            </section>
+        <section id="replace">
+                <h2>replace( render_callback )</h2>
+        
+                <p>Replaces current elements in this CalDom instance with new elements returned by the render_callback function.</p><p>The algorithm compares the elements(including their descendents) and only replace the nodes if there is a difference against the actual DOM. This is useful to minimize expensive browser layout repaints.</p><p>(This is the same algorithm used by react() to compare &amp; apply DOM changes.)</p>
+
+                <h3>Parameters:</h3>
+                
+                    <div class="param-container">
+                        <h4>render_callback<span class="param-types"> : Function</span></h4>
+                        <div><p>Render function that returns the new replacement element.</p><p>The callback receieves 3 parameters: render_callback( current_elem: Node, index: Number, caldom_instance: CalDom ): {Node || CalDom}</p></div>
+                    </div>
+            
+
+                <h3>Returns:</h3>
+                <p>{CalDom} Returns this CalDom instance.</p>
+                    <h3>Examples:</h3>
+                    <textarea>
+ //Imagine this HTML document:
+ //	<div>
+ //		<p>ABC</p>
+ //		<p>XYZ</p>
+ //	</div>
+
+ //Replace all paragraph elements using a new _("+p")
+ _("p")
+ 	.replace(
+ 		function(old_elem, index, caldom_instance){
+ 			//In this case, only the 1st paragraph will be replaced
+ 			//since the 2nd paragraph is the same.
+
+ 			return _("+p").text( "XYZ" );
+ 		}
+ );
+
+ //Replace using a new element created by createElement()
+ _("p")
+ 	.replace(
+ 		function(old_elem, index, caldom_instance){
+ 			//Both paragraphs will be replaced by this empty DIV
+ 			return document.createElement("div");
+ 		}
+ );
+</textarea>
+            </section>
+        <section id="react">
+                <h2>react( state, config )</h2>
+        
+                <p>Make this CalDom instance a reactive component by providing a state, render() or an update() function. CalDom compares differences and efficiently updates relevant DOM Node changes.</p><p>Alternatively, this can be also achieved by extending _.Component class. See below examples.</p>
+
+                <h3>Parameters:</h3>
+                
+                    <div class="param-container">
+                        <h4>state<span class="param-types"> : any</span></h4>
+                        <div><p>(Optional, but requires to initiate) Any value or an { key: value, ... } object.</p></div>
+                    </div>
+            
+                    <div class="param-container">
+                        <h4>config<span class="param-types"> : Object</span></h4>
+                        <div><p>(Optional, but requires to initiate) Reactive configuration containing render(), update(), etc.</p></div>
+                    </div>
+            
+                    <div class="param-container">
+                        <h4>config.render<span class="param-types"> : Function</span></h4>
+                        <div><p>(Optional, if update() is given) Should return a CalDom or a Node/Element. Return false to terminate render process.</p><p>render(state: any, component: CalDom): receieves state and component(this CalDom instance) as arguments.</p><p>All CalDom methods &amp; properties (find(), text(), css(), etc.) can be accessed via component. Eg: component.text(&quot;Hello World!&quot;).</p><p>CalDom sync child nodes (including text), attributes, CSS, value, checked, indeterminate, selected &amp; _data property set by .data() between connected DOM &amp; virtual DOM. It doesn&#x27;t sync changed events &amp; other custom properties directly attached to DOM nodes.</p><p>To force a complete Node replacement with all events and properties, set a different/incremental &quot;caldom-v&quot; attribute to the element at render() (&quot;v&quot; as in version of the element).</p><p></p><p>The first render() gets executed synchronously. After that, render() gets executed asynchronously through requestAnimationFrame when the state changes. This is asynchronous in both watched = true mode or when react() is called manually.</p><p>Calling react() with a brand new state execute render() synchronously. Eg: app.react( new_state );</p></div>
+                    </div>
+            
+                    <div class="param-container">
+                        <h4>config.update<span class="param-types"> : Function</span></h4>
+                        <div><p>(Optional, if render() is given) If an update() function is present, CalDom will execute it instead of render(). (Intial render() get executed regardless).</p><p>Manually updating DOM changes directly by accessing the native DOM API is obviously more performant than a render() based virtual-DOM approach. Set this.$ references at render() to access the native Nodes directly. Refer this.$ below for details.</p><p>Also, update() is useful to update existing non-javascript originated(.html file based) HTML structures reactively.</p><p>If the update() returns true, CalDom will also execute render() and proceed with virtual-real DOM comparison and apply subsequent changes.</p><p></p><p>update(</p><p>&emsp;state: any,</p><p>&emsp;component: CalDom,</p><p>&emsp;state_changed_keys: Object,</p><p>&emsp;state_change_count: Number</p><p>);</p><p></p><p>Arguments are state, component(this CalDom instance) and batched and changed state key names &amp; change count since the last render()/update().</p><p>state_changed_keys &amp; state_change_count is useful to do select direct DOM changes or fall back to render() by returning true if the changes are complex.</p><p>state_changed_keys is an Object. Eg: { key_name: String, value_is_available: Boolean }. If the state change is a deletion, value_is_available is set to false.</p><p>state_changed_keys is one-dimentional. If the same key_name is used more than once at deeper levels of state object, only the last key-value change is represented here. Use this.state for deeper analysis.</p><p>If the same key change multiple times, state_change_count is increased accordingly. state_changed_keys &amp; state_change_count are only populated in watched = true mode.</p><p></p><p>All CalDom methods &amp; properties (find(), text(), css(), etc,) can be accessed via component. Eg: component.css( &quot;color&quot;, &quot;green&quot; )</p></div>
+                    </div>
+            
+                    <div class="param-container">
+                        <h4>config.watched=true<span class="param-types"> : Boolean</span></h4>
+                        <div><p>(Optional) True by default. If false, CalDom will not react to state changes automatically. Call react() manually after changing state.</p><p>CalDom is using Javascript Proxies to detect state changes. Browser versions released before 2016 may not support it natively. Implement a pollyfil for older browsers or you can call react() manually after state changes.</p><p>(Note that Proxy pollyfils require variable to be defined in advance.)</p><p>If Proxy is not supported caldom.watched will set to false despite initially setting config.watched = true.</p><p>If you chose not to use the Proxy for some reason, you can call .react() after state changes. There is no performance hit by calling it repetedly because CalDom is using requestAnimationFrame to batch DOM updates efficiently.</p><p>Also, calling react() manually immediately after state changes does not cause a re-render even when Proxy is supported.</p></div>
+                    </div>
+            
+                    <div class="param-container">
+                        <h4>config.willMount<span class="param-types"> : Function</span></h4>
+                        <div><p>(Optional) Called before the Component is mounted(appended) into a parent Node. Receives current CalDom instance as the only argument.</p></div>
+                    </div>
+            
+                    <div class="param-container">
+                        <h4>config.didMount<span class="param-types"> : Function</span></h4>
+                        <div><p>(Optional) Called after the Component is mounted(appended) into a parent Node. Receives current CalDom instance as the only argument.</p></div>
+                    </div>
+            
+                    <div class="param-container">
+                        <h4>config.willUnmount<span class="param-types"> : Function</span></h4>
+                        <div><p>(Optional) Called before the Component is removed.</p><p>Callback receives two argument as callback( component: CalDom, [directly_removed: Boolean] ). directly_removed is set to true if removed directly by calling .remove().</p><p>Otherwise, set to undefined if removed while applying virtual-DOM changes to the real DOM. The removed component might get re-connected at a different position in the DOM tree.</p></div>
+                    </div>
+            
+                    <div class="param-container">
+                        <h4>config.didUnmount<span class="param-types"> : Function</span></h4>
+                        <div><p>(Optional) Called after the Component is removed.</p><p>Callback receives two argument as callback( component: CalDom, [directly_removed: Boolean] ). directly_removed is set to true if removed directly by calling .remove().</p><p>Otherwise, set to undefined if removed while applying virtual-DOM changes to the real DOM. The removed component might get re-connected at a different position in the DOM tree.</p></div>
+                    </div>
+            
+                    <div class="param-container">
+                        <h4>config.didUpdate<span class="param-types"> : Function</span></h4>
+                        <div><p>(Optional) Called after the Component is updated and/or rendered and all virtual-DOM changes applied to the real DOM. Receives current CalDom instance as the only argument.</p></div>
+                    </div>
+            
+
+                <h3>Returns:</h3>
+                <p>{CalDom} Returns this CalDom instance.</p>
+                    <h3>Examples:</h3>
+                    <textarea>
+ //Hello World Component (non-class based approach)
+ var helloWorldApp = _().react(
+		{ name: "World!" },
+		{
+			render: (state) => _("+h1", "Hello " + state.name )
+		}
+	);
+
+ _("body").append( helloWorldApp );
+
+ helloWorldApp.state.name = "CalDom!";
+
+ //Hello World Component (Class based approach)
+ class HelloWorldApp extends _.Component{
+
+	constructor(state){
+		super();
+	  	this.react(state); //this == CalDom instance
+	}
+
+	render(state){ //state is a shortcut to this.state
+		return _("+h1", "Hello " + state.name );
+	}
+ }
+
+ var app = new HelloWorldApp({ name: "World!" });
+ _("body", app );
+
+ app.state.name = "CalDom";
+
+ //Make an existing HTML H1 reactive
+ var helloWorld = _("#main-heading").react(
+ 		{ name : "World!" },
+ 		{
+ 			update: (state, component) => component.text( "Hello " + state.name )
+ 		}
+ );
+
+ helloWorld.state.name = "CalDom!";
+ 
+ //Combine the power of both render() & update()
+ var helloWorld = _("#main-heading").react(
+	{ name : "World!", visible: false },
+	{
+		render: function(state){
+			return this.$.h1 = _("+h1", "Hello " + state.name )
+				.addClass( state.visible ? "visible" : "").elem;
+		},
+
+		update: function(state, component, changed_keys, state_change_count){
+			if( state_change_count == 1 && "visible" in changed_keys ){
+				
+				//Directly & efficiently update DOM without going through Virtual-DOM
+				if( state.visible ) this.$.h1.classList.add("visible");
+				else this.$.h1.classList.remove("visible");
+			}
+			else{
+				//If the changes are too complex, proceed to render() via Virtual-DOM
+				return true;
+			}
+		}
+	}
+ );
+
+ setTimeout( () =>
+	helloWorld.state.visible = true //This is handled by update()
+ , 1000);
+ 
+ //Manual reactive approach (without automatic update on state change)
+ var helloWorldApp = _().react(
+     { name: "World!" },
+     {
+         render: (state) => _("+h1", "Hello " + state.name ),
+         watched: false //Disabling automatic state changes watch
+     }
+ );
+
+ _("body", helloWorldApp );
+ helloWorldApp.state.name = "CalDom!";
+
+ //Calling react() manually after state change
+ //This gets executed asynchronously through requestAnimationFrame. (Same as watched = true mode)
+ helloWorldApp.react();
+
+ //Alternatively, react() can be called with a brand new state.
+ //This gets executed synchronously (not using requestAnimationFrame)
+ helloWorldApp.react( { name: "JS!" } );
+</textarea>
+            </section>
+        <section id="watched">
+                <h2>watched: Boolean
+</h2>
+        
+                <p>Whether state changes are monitored in the reactive mode. See react() for details.</p>
+            </section>
+        <section id="this.$">
+                <h2>this.$: Object
+</h2>
+        
+                <p>Reference holder for CalDOM or Node appended to the DOM. This can be used to keep CalDOM or direct DOM Node references in sync even when the render() drastically modify the DOM structure.</p><p>If referenced, an attribute named &quot;_ref&quot; will be added to the Element. This is to track &amp; update references when elements get moved/replaced by virtual-DOM diffing algorithm. (Sync requires native Proxy support or a polyfill).</p>
+                    <h3>Examples:</h3>
+                    <textarea> var helloWorld = _("#main-heading").react(
+	{ name : "World!" },
+	{
+		render: function(state){
+			return this.$.h1 = _("+h1", "Hello " + state.name ).elem; //Note this.$.h1 =
+		},
+
+		update: function(state){
+			// Using referenced native DOM Element $.h1
+ 			// to directly update text
+ 			this.$.h1.textContent = "Hello " + state.name;
+		}
+	}
+ );
+
+ setTimeout( () =>
+	helloWorld.state.name = "CalDOM" //This is handled by update()
+ , 1000);
+</textarea>
+            </section>
+        <section id="_.q">
+                <h2>_.q( query, parent_node )
+</h2>
+        
+                <p>Call CalDom&#x27;s query/create function directly using _.q(query)</p>
+
+                <h3>Parameters:</h3>
+                
+                    <div class="param-container">
+                        <h4>query<span class="param-types"> : String</span></h4>
+                        <div><p>&quot;+tag&quot; creates a new Element. &#x27;&lt;tag&gt;&lt;/tag&gt;&#x27; creates specified HTML structure. ~svg_tag&quot; creates a SVG element. Otherwise it can be a CSS Selector or an XPath query starting with &quot;$&quot;</p></div>
+                    </div>
+            
+                    <div class="param-container">
+                        <h4>parent_node<span class="param-types"> : Node</span></h4>
+                        <div><p>Treated as the parent node for CSS selector or XPath query. Otherwise, default to window.document</p></div>
+                    </div>
+            
+
+                <h3>Returns:</h3>
+                <p>{Array&lt;Node&gt;} Array with the new element or NodeList returned by the CSS selector or the XPath query</p><p>(Shorten for query())</p>
+                    <h3>Examples:</h3>
+                    <textarea>
+ //Get element with id "container-id" using its CSS selector
+ var container = _.q("#container-id")[0];
+
+ //Create a new <div> element
+ var div = _.q("+div")[0];
+
+ //Create a password input element using full HTML syntax
+ var para = _.q( '<input type="password" placeholder="Type your password here" />' );
+
+  * //Create a new SVG element
+ var svg_rectangle = _.q("~rect").attr({ width: 100, height: 100 })[0];
+
+ //Get all <p> elements inside <article> using an XPath query
+ var paragraphs_array = _.q("$//article/p");
+</textarea>
+            </section>
+        <section id="_.Component.prototype">
+                <h2>_.Component.prototype
+</h2>
+        
+                <p>Extend and modify core functionality of CalDom by accessing its prototype.</p>
+                    <h3>Examples:</h3>
+                    <textarea>
+ //Adding a custom core function
+ _.Component.prototype.customFunction = function(){
+ 		for( var i = 0, count = this.elems.length; i < count; i++ ){
+ 			//Do something
+ 		}
+ }
+</textarea>
+            </section>
+        <section id="_.version">
+                <h2>_.version: String
+</h2>
+        
+                <p>Get version of CalDom.</p>
+                    <h3>Examples:</h3>
+                    <textarea>
+ var version = _.version;
+</textarea>
+            </section>
+        <section id="_cal_dom_alias">
+                <h2>_cal_dom_alias
+</h2>
+        
+                <p>CalDOM is using &#x27;_&#x27; variable as a global short-hand by default. To use a different alias,  set window[&#x27;_cal_dom_alias&#x27;] before loading CalDOM.</p>
+                    <h3>Examples:</h3>
+                    <textarea>
+ window['_cal_dom_alias'] = 'different_alias';
+</textarea>
+            </section>
+        </div>

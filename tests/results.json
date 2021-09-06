@@ -1,0 +1,2202 @@
+{
+  "result": {
+    "benchmark": {},
+    "tests": {
+      "init": {
+        "empty_instance": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "extended_class": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "find_elem_by_selector": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "find_elem_by_xpath": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "find_multiple_elems_by_selector": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "find_multiple_elems_by_xpath": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "new_instance_with_an_element": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "new_instance_with_node_list": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "create_new_svg_element": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "create_new_element": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "create_new_element_html": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "create_element_and_append_child": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "create_element_and_append_children": {
+          "caldom": {
+            "status": true
+          }
+        }
+      },
+      "traverse": {
+        "find_css_selector_from_multiple": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "find_css_selector_from_single": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "find_xpath": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "eq_positive_number": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "eq_negative_number": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "parent": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "parent_index": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "parent_css_selector": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "children": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "children_css_selector": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "children_of_multiple_parents": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "parents_of_multiple_children": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "elems": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "elem": {
+          "caldom": {
+            "status": true
+          }
+        }
+      },
+      "iterate": {
+        "each_multiple": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "each_return": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "each_single": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "each_stop_enumeration": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "map_multiple": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "map_single": {
+          "caldom": {
+            "status": true
+          }
+        }
+      },
+      "content": {
+        "get_html": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "set_html_string": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "set_html_array": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "get_text_multiple": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "get_text_single": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "set_text_string": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "set_text_array": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "get_val": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "set_val_string": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "set_val_array": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "get_attr_multiple": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "get_attr_single": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "set_attr_key_value_multiple": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "set_attr_key_value_single": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "set_attr_key_value_array_multiple": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "set_attr_key_value_array_single": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "set_attr_key_value_object_multiple": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "set_attr_key_value_object_single": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "get_prop": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "set_prop_key_value": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "set_prop_key_value_array": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "set_prop_key_value_object": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "get_data": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "set_data": {
+          "caldom": {
+            "status": true
+          }
+        }
+      },
+      "styling": {
+        "css_get_multiple": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "css_get_single": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "css_set_key_value_multiple": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "css_set_key_value_single": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "css_set_key_value_array_multiple": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "css_set_key_value_array_single": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "css_set_key_value_object_multiple": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "css_set_key_value_object_single": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "add_single_class_string_to_multiple": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "add_single_class_string_to_single": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "add_multiple_class_string_to_multiple": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "add_multiple_class_string_to_single": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "add_class_array_to_multiple": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "add_class_array_to_single": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "remove_single_class_string_from_multiple": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "remove_single_class_string_from_single": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "remove_multiple_class_string_from_multiple": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "remove_multiple_class_string_from_single": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "remove_class_array_from_multiple": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "remove_class_array_from_single": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "show": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "show_value": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "hide": {
+          "caldom": {
+            "status": true
+          }
+        }
+      },
+      "events": {
+        "on_string_single_event": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "on_string_multiple_events": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "on_array_multiple_events": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "off_string_single_event": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "off_string_multiple_events": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "off_array_multiple_events": {
+          "caldom": {
+            "status": true
+          }
+        }
+      },
+      "dom": {
+        "append_caldom": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "append_element": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "append_html": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "append_null": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "append_undefined": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "append_text": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "append_mixed_array": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "append_mixed_arguments": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "append_existing_elements": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "append_existing_caldom": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "prepend_single_element": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "prepend_multiple_elements": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "prepend_multiple_elements_at_position": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "remove": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "replace": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "react.render": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "react.update_first_render": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "react.update_only": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "react.update_state_change": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "react.update_render_fallback": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "react_render_state_change": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "react.new_state": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "react.watched_false": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "react.watched_false_react": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "react_lifecycle_events_before_mount": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "react_lifecycle_events": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "react_lifecycle_events_es6": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "react_batching": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "react_manual_batching": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "react_state_change_keys_count": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "react_nested_components": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "react_nested_components_delayed": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "react_nested_components_es6": {
+          "caldom": {
+            "status": true
+          }
+        },
+        "reactive_todo_app_operation": {
+          "caldom": {
+            "status": true
+          }
+        }
+      }
+    }
+  },
+  "metadata": {
+    "machine_details": {},
+    "task_configs": {
+      "init_empty_instance": {
+        "short_name": "empty_instance",
+        "display_order": 0,
+        "category": "init",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "init_extended_class": {
+        "short_name": "extended_class",
+        "display_order": 1,
+        "category": "init",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "init_find_elem_by_selector": {
+        "short_name": "find_elem_by_selector",
+        "display_order": 2,
+        "category": "init",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "init_find_elem_by_xpath": {
+        "short_name": "find_elem_by_xpath",
+        "display_order": 3,
+        "category": "init",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "init_find_multiple_elems_by_selector": {
+        "short_name": "find_multiple_elems_by_selector",
+        "display_order": 4,
+        "category": "init",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "init_find_multiple_elems_by_xpath": {
+        "short_name": "find_multiple_elems_by_xpath",
+        "display_order": 5,
+        "category": "init",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "init_new_instance_with_an_element": {
+        "short_name": "new_instance_with_an_element",
+        "display_order": 7,
+        "category": "init",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "init_new_instance_with_node_list": {
+        "short_name": "new_instance_with_node_list",
+        "display_order": 9,
+        "category": "init",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "init_create_new_svg_element": {
+        "short_name": "create_new_svg_element",
+        "display_order": 10,
+        "category": "init",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "init_create_new_element": {
+        "short_name": "create_new_element",
+        "display_order": 11,
+        "category": "init",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "init_create_new_element_html": {
+        "short_name": "create_new_element_html",
+        "display_order": 12,
+        "category": "init",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "init_create_element_and_append_child": {
+        "short_name": "create_element_and_append_child",
+        "display_order": 13,
+        "category": "init",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "init_create_element_and_append_children": {
+        "short_name": "create_element_and_append_children",
+        "display_order": 13,
+        "category": "init",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "traverse_find_css_selector_from_multiple": {
+        "short_name": "find_css_selector_from_multiple",
+        "display_order": 13,
+        "category": "traverse",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "traverse_find_css_selector_from_single": {
+        "short_name": "find_css_selector_from_single",
+        "display_order": 13,
+        "category": "traverse",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "traverse_find_xpath": {
+        "short_name": "find_xpath",
+        "display_order": 14,
+        "category": "traverse",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "traverse_eq_positive_number": {
+        "short_name": "eq_positive_number",
+        "display_order": 15,
+        "category": "traverse",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "traverse_eq_negative_number": {
+        "short_name": "eq_negative_number",
+        "display_order": 16,
+        "category": "traverse",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "traverse_parent": {
+        "short_name": "parent",
+        "display_order": 16,
+        "category": "traverse",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "traverse_parent_index": {
+        "short_name": "parent_index",
+        "display_order": 17,
+        "category": "traverse",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "traverse_parent_css_selector": {
+        "short_name": "parent_css_selector",
+        "display_order": 18,
+        "category": "traverse",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "traverse_children": {
+        "short_name": "children",
+        "display_order": 19,
+        "category": "traverse",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "traverse_children_css_selector": {
+        "short_name": "children_css_selector",
+        "display_order": 20,
+        "category": "traverse",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "traverse_children_of_multiple_parents": {
+        "short_name": "children_of_multiple_parents",
+        "display_order": 21,
+        "category": "traverse",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "traverse_parents_of_multiple_children": {
+        "short_name": "parents_of_multiple_children",
+        "display_order": 22,
+        "category": "traverse",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "iterate_each_multiple": {
+        "short_name": "each_multiple",
+        "display_order": 23,
+        "category": "iterate",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "iterate_each_return": {
+        "short_name": "each_return",
+        "display_order": 23,
+        "category": "iterate",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "iterate_each_single": {
+        "short_name": "each_single",
+        "display_order": 23,
+        "category": "iterate",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "iterate_each_stop_enumeration": {
+        "short_name": "each_stop_enumeration",
+        "display_order": 24,
+        "category": "iterate",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "iterate_map_multiple": {
+        "short_name": "map_multiple",
+        "display_order": 25,
+        "category": "iterate",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "iterate_map_single": {
+        "short_name": "map_single",
+        "display_order": 25,
+        "category": "iterate",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "content_get_html": {
+        "short_name": "get_html",
+        "display_order": 26,
+        "category": "content",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "content_set_html_string": {
+        "short_name": "set_html_string",
+        "display_order": 27,
+        "category": "content",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "content_set_html_array": {
+        "short_name": "set_html_array",
+        "display_order": 28,
+        "category": "content",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "content_get_text_multiple": {
+        "short_name": "get_text_multiple",
+        "display_order": 29,
+        "category": "content",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "content_get_text_single": {
+        "short_name": "get_text_single",
+        "display_order": 29,
+        "category": "content",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "content_set_text_string": {
+        "short_name": "set_text_string",
+        "display_order": 30,
+        "category": "content",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "content_set_text_array": {
+        "short_name": "set_text_array",
+        "display_order": 31,
+        "category": "content",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "content_get_val": {
+        "short_name": "get_val",
+        "display_order": 32,
+        "category": "content",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "content_set_val_string": {
+        "short_name": "set_val_string",
+        "display_order": 33,
+        "category": "content",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "content_set_val_array": {
+        "short_name": "set_val_array",
+        "display_order": 34,
+        "category": "content",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "content_get_attr_multiple": {
+        "short_name": "get_attr_multiple",
+        "display_order": 35,
+        "category": "content",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "content_get_attr_single": {
+        "short_name": "get_attr_single",
+        "display_order": 35,
+        "category": "content",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "content_set_attr_key_value_multiple": {
+        "short_name": "set_attr_key_value_multiple",
+        "display_order": 36,
+        "category": "content",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "content_set_attr_key_value_single": {
+        "short_name": "set_attr_key_value_single",
+        "display_order": 36,
+        "category": "content",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "content_set_attr_key_value_array_multiple": {
+        "short_name": "set_attr_key_value_array_multiple",
+        "display_order": 37,
+        "category": "content",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "content_set_attr_key_value_array_single": {
+        "short_name": "set_attr_key_value_array_single",
+        "display_order": 37,
+        "category": "content",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "content_set_attr_key_value_object_multiple": {
+        "short_name": "set_attr_key_value_object_multiple",
+        "display_order": 38,
+        "category": "content",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "content_set_attr_key_value_object_single": {
+        "short_name": "set_attr_key_value_object_single",
+        "display_order": 38,
+        "category": "content",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "content_get_prop": {
+        "short_name": "get_prop",
+        "display_order": 40,
+        "category": "content",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "content_set_prop_key_value": {
+        "short_name": "set_prop_key_value",
+        "display_order": 41,
+        "category": "content",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "content_set_prop_key_value_array": {
+        "short_name": "set_prop_key_value_array",
+        "display_order": 42,
+        "category": "content",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "content_set_prop_key_value_object": {
+        "short_name": "set_prop_key_value_object",
+        "display_order": 43,
+        "category": "content",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "content_get_data": {
+        "short_name": "get_data",
+        "display_order": 44,
+        "category": "content",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "content_set_data": {
+        "short_name": "set_data",
+        "display_order": 45,
+        "category": "content",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "styling_css_get_multiple": {
+        "short_name": "css_get_multiple",
+        "display_order": 46,
+        "category": "styling",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "styling_css_get_single": {
+        "short_name": "css_get_single",
+        "display_order": 46,
+        "category": "styling",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "styling_css_set_key_value_multiple": {
+        "short_name": "css_set_key_value_multiple",
+        "display_order": 47,
+        "category": "styling",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "styling_css_set_key_value_single": {
+        "short_name": "css_set_key_value_single",
+        "display_order": 47,
+        "category": "styling",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "styling_css_set_key_value_array_multiple": {
+        "short_name": "css_set_key_value_array_multiple",
+        "display_order": 48,
+        "category": "styling",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "styling_css_set_key_value_array_single": {
+        "short_name": "css_set_key_value_array_single",
+        "display_order": 48,
+        "category": "styling",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "styling_css_set_key_value_object_multiple": {
+        "short_name": "css_set_key_value_object_multiple",
+        "display_order": 49,
+        "category": "styling",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "styling_css_set_key_value_object_single": {
+        "short_name": "css_set_key_value_object_single",
+        "display_order": 49,
+        "category": "styling",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "styling_add_single_class_string_to_multiple": {
+        "short_name": "add_single_class_string_to_multiple",
+        "display_order": 50,
+        "category": "styling",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "styling_add_single_class_string_to_single": {
+        "short_name": "add_single_class_string_to_single",
+        "display_order": 50,
+        "category": "styling",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "styling_add_multiple_class_string_to_multiple": {
+        "short_name": "add_multiple_class_string_to_multiple",
+        "display_order": 51,
+        "category": "styling",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "styling_add_multiple_class_string_to_single": {
+        "short_name": "add_multiple_class_string_to_single",
+        "display_order": 51,
+        "category": "styling",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "styling_add_class_array_to_multiple": {
+        "short_name": "add_class_array_to_multiple",
+        "display_order": 52,
+        "category": "styling",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "styling_add_class_array_to_single": {
+        "short_name": "add_class_array_to_single",
+        "display_order": 52,
+        "category": "styling",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "styling_remove_single_class_string_from_multiple": {
+        "short_name": "remove_single_class_string_from_multiple",
+        "display_order": 53,
+        "category": "styling",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "styling_remove_single_class_string_from_single": {
+        "short_name": "remove_single_class_string_from_single",
+        "display_order": 53,
+        "category": "styling",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "styling_remove_multiple_class_string_from_multiple": {
+        "short_name": "remove_multiple_class_string_from_multiple",
+        "display_order": 54,
+        "category": "styling",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "styling_remove_multiple_class_string_from_single": {
+        "short_name": "remove_multiple_class_string_from_single",
+        "display_order": 54,
+        "category": "styling",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "styling_remove_class_array_from_multiple": {
+        "short_name": "remove_class_array_from_multiple",
+        "display_order": 55,
+        "category": "styling",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "styling_remove_class_array_from_single": {
+        "short_name": "remove_class_array_from_single",
+        "display_order": 55,
+        "category": "styling",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "styling_show": {
+        "short_name": "show",
+        "display_order": 56,
+        "category": "styling",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "styling_show_value": {
+        "short_name": "show_value",
+        "display_order": 57,
+        "category": "styling",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "styling_hide": {
+        "short_name": "hide",
+        "display_order": 58,
+        "category": "styling",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "events_on_string_single_event": {
+        "short_name": "on_string_single_event",
+        "display_order": 59,
+        "category": "events",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "events_on_string_multiple_events": {
+        "short_name": "on_string_multiple_events",
+        "display_order": 60,
+        "category": "events",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "events_on_array_multiple_events": {
+        "short_name": "on_array_multiple_events",
+        "display_order": 61,
+        "category": "events",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "events_off_string_single_event": {
+        "short_name": "off_string_single_event",
+        "display_order": 62,
+        "category": "events",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "events_off_string_multiple_events": {
+        "short_name": "off_string_multiple_events",
+        "display_order": 63,
+        "category": "events",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "events_off_array_multiple_events": {
+        "short_name": "off_array_multiple_events",
+        "display_order": 64,
+        "category": "events",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_append_caldom": {
+        "short_name": "append_caldom",
+        "display_order": 65,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_append_element": {
+        "short_name": "append_element",
+        "display_order": 66,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_append_html": {
+        "short_name": "append_html",
+        "display_order": 67,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_append_null": {
+        "short_name": "append_null",
+        "display_order": 68,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_append_undefined": {
+        "short_name": "append_undefined",
+        "display_order": 69,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_append_text": {
+        "short_name": "append_text",
+        "display_order": 70,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_append_mixed_array": {
+        "short_name": "append_mixed_array",
+        "display_order": 71,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_append_mixed_arguments": {
+        "short_name": "append_mixed_arguments",
+        "display_order": 72,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_append_existing_elements": {
+        "short_name": "append_existing_elements",
+        "display_order": 73,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_append_existing_caldom": {
+        "short_name": "append_existing_caldom",
+        "display_order": 74,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_prepend_single_element": {
+        "short_name": "prepend_single_element",
+        "display_order": 75,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_prepend_multiple_elements": {
+        "short_name": "prepend_multiple_elements",
+        "display_order": 76,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_prepend_multiple_elements_at_position": {
+        "short_name": "prepend_multiple_elements_at_position",
+        "display_order": 77,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_remove": {
+        "short_name": "remove",
+        "display_order": 78,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_replace": {
+        "short_name": "replace",
+        "display_order": 79,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_react.render": {
+        "short_name": "react.render",
+        "display_order": 80,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_react.update_first_render": {
+        "short_name": "react.update_first_render",
+        "display_order": 81,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 500,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_react.update_only": {
+        "short_name": "react.update_only",
+        "display_order": 81,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 500,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_react.update_state_change": {
+        "short_name": "react.update_state_change",
+        "display_order": 82,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 500,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_react.update_render_fallback": {
+        "short_name": "react.update_render_fallback",
+        "display_order": 83,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 500,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_react_render_state_change": {
+        "short_name": "react_render_state_change",
+        "display_order": 84,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 500,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_react.new_state": {
+        "short_name": "react.new_state",
+        "display_order": 85,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_react.watched_false": {
+        "short_name": "react.watched_false",
+        "display_order": 86,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 500,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_react.watched_false_react": {
+        "short_name": "react.watched_false_react",
+        "display_order": 87,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 500,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_react_lifecycle_events_before_mount": {
+        "short_name": "react_lifecycle_events_before_mount",
+        "display_order": 88,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 1000,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_react_lifecycle_events": {
+        "short_name": "react_lifecycle_events",
+        "display_order": 89,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 1500,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_react_lifecycle_events_es6": {
+        "short_name": "react_lifecycle_events_es6",
+        "display_order": 89,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 1500,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_react_batching": {
+        "short_name": "react_batching",
+        "display_order": 90,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 1000,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_react_manual_batching": {
+        "short_name": "react_manual_batching",
+        "display_order": 91,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 1000,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_react_state_change_keys_count": {
+        "short_name": "react_state_change_keys_count",
+        "display_order": 92,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 3000,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_react_nested_components": {
+        "short_name": "react_nested_components",
+        "display_order": 93,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 1000,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_react_nested_components_delayed": {
+        "short_name": "react_nested_components_delayed",
+        "display_order": 93,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 2000,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_react_nested_components_es6": {
+        "short_name": "react_nested_components_es6",
+        "display_order": 94,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 1000,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "traverse_elems": {
+        "short_name": "elems",
+        "display_order": 117,
+        "category": "traverse",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "traverse_elem": {
+        "short_name": "elem",
+        "display_order": 118,
+        "category": "traverse",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      },
+      "dom_reactive_todo_app_operation": {
+        "short_name": "reactive_todo_app_operation",
+        "display_order": 119,
+        "category": "dom",
+        "description": "",
+        "candidates": [
+          "caldom"
+        ],
+        "assert_delay": 0,
+        "browser_task_config": {
+          "candidate": "caldom"
+        }
+      }
+    },
+    "pfreak_version": "0.3",
+    "config": {
+      "headless": true,
+      "iteration_count": 10,
+      "assert_delay": 2000,
+      "cpu_slowdown": 1,
+      "library_paths": {
+        "caldom": {
+          "sources": [
+            "caldom.min.js"
+          ],
+          "isLoadedFunction": " return typeof _ != 'undefined' "
+        }
+      },
+      "path_to_folder": "./"
+    }
+  }
+}

@@ -1,0 +1,83 @@
+#intro{
+    background: #1a1a1a;
+    color: #dcdcdc;
+    text-align: center;
+}
+
+#intro h1{
+    font-size: 3em;
+}
+
+#intro .highlight, #pure-js span{
+    color: #ffb351;
+}
+
+#caldom-logo-img{
+    margin-top: 1em;
+}
+
+#tag-line{
+    font-size: 1.2em;
+}
+
+#performance-boxes{
+    display: flex;
+    justify-content: center;
+}
+
+.performance-box{
+    display: inline-block;
+    margin: 1em;
+    padding: 1em 2em;
+    background: #000;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    min-width: 10em;
+}
+
+.performance-box p{
+    margin: 0.5em auto;
+}
+
+.performance-box .factor{
+    /* color: #a7fb56; */
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.behnchmark-method{
+    font-size: 0.8em;
+    color: #CCC;
+}
+
+@media all and (max-width: 770px){
+    #performance-boxes{
+        flex-direction: column;
+    }
+    
+    .performance-box{
+        margin: 0.5em;
+        padding: 0.5em;
+    }
+
+    .performance-box .factor{
+        font-size: 2em;
+    }
+
+    .performance-box p{
+        margin: 0.5em auto;
+    }
+}
+
+#benchmark-info{
+    font-size: 0.9em;
+}
+
+#cta-container{
+    margin-top: 1.5em;
+}
+
+#pure-js{
+    font-weight: bold;
+    font-size: 1.2em;
+}
